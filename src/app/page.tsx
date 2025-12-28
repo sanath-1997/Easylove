@@ -76,7 +76,7 @@ export default function Home() {
       <main className="flex-1">
         <section id="hero" className="w-full pt-12 md:pt-24 lg:pt-32">
           <div className="container px-4 md:px-6 text-center space-y-8">
-            <div className="inline-block bg-primary text-primary-foreground py-4 px-6 md:px-8 rounded-lg -rotate-2 shadow-lg">
+            <div className="inline-block bg-primary text-primary-foreground py-4 px-6 md:px-8 rounded-lg shadow-lg">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline flex items-center gap-3">
                 10 Easy Steps to Marry the Girl You love <Heart className="w-8 h-8 md:w-12 md:h-12 fill-white" />
               </h1>
