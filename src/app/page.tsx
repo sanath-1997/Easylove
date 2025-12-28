@@ -2,13 +2,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Heart, Mail, Phone, Download } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Heart, Mail, Phone } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
 import { AnimatedCounter } from "@/components/animated-counter";
-
-const ebookCover = PlaceHolderImages.find(p => p.id === 'ebook-cover');
 
 const steps = [
   {
@@ -113,17 +110,14 @@ export default function Home() {
 
         <section id="cover" className="w-full py-12 md:py-24">
             <div className="container flex justify-center">
-                {ebookCover && (
-                    <Image
-                        src={ebookCover.imageUrl}
-                        alt={ebookCover.description}
-                        data-ai-hint={ebookCover.imageHint}
-                        width={400}
-                        height={600}
-                        className="rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105"
-                        priority
-                    />
-                )}
+                <Image
+                    src="/images/10 Easy Steps (1).png"
+                    alt="Ebook cover for 10 Easy Steps to Marry the Girl You Love"
+                    width={400}
+                    height={600}
+                    className="rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105"
+                    priority
+                />
             </div>
         </section>
 
