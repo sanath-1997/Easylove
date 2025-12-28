@@ -219,7 +219,8 @@ export default function Home() {
               {steps.map((step, index) => (
                 <AccordionItem value={`item-${index + 1}`} key={index}>
                   <AccordionTrigger className="text-lg font-bold font-headline text-left">
-                    <span className="mr-2">📘 Step {index + 1}:</span> {step.title}
+                    <span className="mr-2 flex-shrink-0">📘 Step {index + 1}:</span>
+                    <span>{step.title}</span>
                   </AccordionTrigger>
                   <AccordionContent className="text-base text-foreground/80">
                     {step.content}
@@ -357,6 +358,8 @@ export default function Home() {
     </div>
   );
 }
+    
+
     
 
     
