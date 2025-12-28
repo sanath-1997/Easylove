@@ -151,7 +151,7 @@ export default function Home() {
                 )}
                 <a href="https://rzp.io/rzp/05NiI8Eh">
                   <Button size="lg" className="w-full text-lg font-bold">
-                    Buy Now & Get that Girl❤️
+                    Buy Now & Get your love ❤️
                   </Button>
                 </a>
                 <div className="flex flex-row items-baseline justify-center gap-3 pt-2">
@@ -181,7 +181,7 @@ export default function Home() {
         <section id="what-is-inside" className="w-full py-12 md:py-24 bg-card/50">
           <div className="container px-4 md:px-6 space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold">What's Inside & How It Helps You</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-headline font-bold">What's Inside & How It Helps You</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">A step-by-step roadmap from "just a guy" to "the one".</p>
             </div>
             <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
