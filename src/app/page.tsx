@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Heart, Mail, Phone } from "lucide-react";
+import { Heart, Mail, Phone, Download } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
 import { AnimatedCounter } from "@/components/animated-counter";
@@ -81,7 +81,7 @@ export default function Home() {
             </div>
             
             <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl/relaxed font-bold">
-              Brother, if you’re in love but don’t know what to do next 🤔 — how to approach her, what to say, or how to move things forward — this is for you. No fake lines, no tricks. Just honest, brother-to-brother guidance to help you take the right step without losing your dignity or your heart. ❤️‍🩹
+              Brother, if you’re in love but don’t know what to do next 🤔 — how to approach her, what to say, or how to move things forward — this is for you. No fake lines, no tricks. Just honest, brother-to-brother guidance to help you take the right step without losing your dignity or your heart. ❤️‍🩹 Get that <span className="text-destructive">Digital Copy</span>
             </p>
 
             <Card className="max-w-md mx-auto !mt-12 shadow-2xl">
