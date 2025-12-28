@@ -76,10 +76,33 @@ const reviews = [
 export default function Home() {
   const [offerExpired, setOfferExpired] = useState(false);
   const [downloadCount, setDownloadCount] = useState(9812);
+  const [initialDownloadCount, setInitialDownloadCount] = useState(9812);
+
 
   useEffect(() => {
+    const initialCount = 9812;
+    let storedCount = localStorage.getItem('downloadCount');
+    let currentCount;
+
+    if (storedCount) {
+      currentCount = parseInt(storedCount, 10);
+      if (isNaN(currentCount) || currentCount < initialCount) {
+        currentCount = initialCount;
+      }
+    } else {
+      currentCount = initialCount;
+    }
+    
+    setInitialDownloadCount(currentCount);
+    setDownloadCount(currentCount);
+    localStorage.setItem('downloadCount', String(currentCount));
+    
     const interval = setInterval(() => {
-      setDownloadCount(prevCount => prevCount + 1);
+      setDownloadCount(prevCount => {
+        const newCount = prevCount + 1;
+        localStorage.setItem('downloadCount', String(newCount));
+        return newCount;
+      });
     }, 10000); // 10 seconds
 
     return () => clearInterval(interval);
@@ -133,7 +156,7 @@ export default function Home() {
                 </a>
                 <div className="flex flex-row items-baseline justify-center gap-3 pt-2">
                   <span className="font-bold text-foreground text-5xl">
-                    <AnimatedCounter from={9812} to={downloadCount} />
+                    <AnimatedCounter from={initialDownloadCount} to={downloadCount} />
                   </span>
                   <span className="text-lg text-black font-bold">downloads as of now 🔥</span>
                 </div>
@@ -302,6 +325,8 @@ export default function Home() {
       </footer>
     </div>
   );
+
+    
 
     
 
