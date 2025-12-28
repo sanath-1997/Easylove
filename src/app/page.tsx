@@ -1,3 +1,7 @@
+
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,6 +73,12 @@ const reviews = [
 ]
 
 export default function Home() {
+  const [offerExpired, setOfferExpired] = useState(false);
+
+  const handleTimerComplete = () => {
+    setOfferExpired(true);
+  };
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
@@ -86,14 +96,26 @@ export default function Home() {
 
             <Card className="max-w-md mx-auto !mt-12 shadow-2xl">
               <CardContent className="p-6 space-y-4">
-                <div className="flex items-center justify-center gap-4 animate-price-drop">
-                  <span className="text-4xl font-bold text-foreground line-through">₹299</span>
-                  <span className="text-6xl font-bold text-destructive">₹59</span>
-                </div>
-                <div className="text-center">
-                  <p className="font-bold text-primary">Offer ends in:</p>
-                  <CountdownTimer initialMinutes={10} className="text-foreground" />
-                </div>
+                {offerExpired ? (
+                  <div className="flex items-center justify-center gap-4">
+                    <span className="text-6xl font-bold text-foreground">₹299</span>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex items-center justify-center gap-4 animate-price-drop">
+                      <span className="text-4xl font-bold text-foreground line-through">₹299</span>
+                      <span className="text-6xl font-bold text-destructive">₹59</span>
+                    </div>
+                    <div className="text-center">
+                      <p className="font-bold text-primary">Offer ends in:</p>
+                      <CountdownTimer 
+                        initialMinutes={10} 
+                        className="text-foreground"
+                        onComplete={handleTimerComplete} 
+                      />
+                    </div>
+                  </>
+                )}
                 <Button size="lg" className="w-full text-lg font-bold">
                   Buy Now & Get that Girl❤️
                 </Button>
@@ -194,3 +216,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
