@@ -98,13 +98,13 @@ export default function Home() {
                   <CountdownTimer initialMinutes={30} className="text-foreground" />
                 </div>
                 <Button size="lg" className="w-full text-lg font-bold">
-                  Buy Now &amp; Get that Girl❤️
+                  Buy Now & Get that Girl❤️
                 </Button>
-                <div className="flex flex-col items-center justify-center pt-2 text-base text-muted-foreground">
+                <div className="flex flex-row items-baseline justify-center gap-3 pt-2 text-muted-foreground">
                   <span className="font-bold text-foreground text-5xl">
                     <AnimatedCounter from={9700} to={9812} />
                   </span>
-                  <span>downloads as of now</span>
+                  <span className="text-lg">downloads as of now</span>
                 </div>
               </CardContent>
             </Card>
