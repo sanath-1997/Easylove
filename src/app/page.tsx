@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Heart, Mail, Phone } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
@@ -132,7 +133,7 @@ export default function Home() {
                   <span className="font-bold text-foreground text-5xl">
                     <AnimatedCounter from={9812} to={downloadCount} />
                   </span>
-                  <span className="text-lg text-foreground font-bold">downloads as of now 🔥</span>
+                  <span className="text-lg text-black font-bold">downloads as of now 🔥</span>
                 </div>
               </CardContent>
             </Card>
@@ -213,15 +214,91 @@ export default function Home() {
                 </a>
             </div>
             <div className="text-xs text-primary-foreground/70 space-x-4">
-                <a href="#" className="hover:underline">Privacy Policy</a>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:underline">Privacy Policy</button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Privacy Policy</DialogTitle>
+                      <DialogDescription>
+                        Last updated: {new Date().toLocaleDateString()}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="prose dark:prose-invert max-h-[60vh] overflow-y-auto">
+                      <p>We respect your privacy and are committed to protecting it. This Privacy Policy explains how we collect, use, and safeguard your information when you purchase our ebook.</p>
+                      
+                      <h4>Information We Collect</h4>
+                      <p>We may collect personal information such as your name, email address, and payment information when you place an order.</p>
+
+                      <h4>How We Use Your Information</h4>
+                      <p>We use your information to process your transaction, deliver the ebook, and communicate with you about your order. We may also use your email to send you promotional materials, from which you can opt-out at any time.</p>
+
+                      <h4>Information Sharing</h4>
+                      <p>We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.</p>
+
+                      <h4>Security</h4>
+                      <p>We implement a variety of security measures to maintain the safety of your personal information.</p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+
                 <span>&bull;</span>
-                <a href="#" className="hover:underline">Terms of Service</a>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:underline">Terms of Service</button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Terms of Service</DialogTitle>
+                      <DialogDescription>
+                        Last updated: {new Date().toLocaleDateString()}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="prose dark:prose-invert max-h-[60vh] overflow-y-auto">
+                      <p>By purchasing and downloading this ebook, you agree to be bound by these terms of service.</p>
+
+                      <h4>Intellectual Property</h4>
+                      <p>The ebook and its content are the intellectual property of Marry Her. You may not distribute, share, or resell the ebook in any form.</p>
+
+                      <h4>Disclaimer</h4>
+                      <p>The advice in this ebook is for informational purposes only. Results are not guaranteed and will vary based on individual effort and circumstances.</p>
+
+                      <h4>Governing Law</h4>
+                      <p>These terms shall be governed by the laws of India.</p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+                
                 <span>&bull;</span>
-                <a href="#" className="hover:underline">Refund Policy</a>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:underline">Refund Policy</button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Refund Policy</DialogTitle>
+                      <DialogDescription>
+                        Last updated: {new Date().toLocaleDateString()}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="prose dark:prose-invert max-h-[60vh] overflow-y-auto">
+                      <p>Due to the digital nature of our product, all sales are final. We do not offer refunds or exchanges once the ebook has been purchased and downloaded.</p>
+
+                      <h4>Exceptions</h4>
+                      <p>In the case of a technical issue with the file or a duplicate purchase, please contact us at sanathselvakumaran@gmail.com with your proof of purchase, and we will assist you.</p>
+
+                      <p>We are confident that you will find value in the guidance provided. Thank you for your understanding.</p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
             </div>
             <p className="text-xs text-primary-foreground/70 mt-4">&copy; {new Date().getFullYear()} Marry Her. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
   );
-}
+
+    
