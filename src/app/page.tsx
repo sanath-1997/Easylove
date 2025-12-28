@@ -132,7 +132,7 @@ export default function Home() {
                   <span className="font-bold text-foreground text-5xl">
                     <AnimatedCounter from={9812} to={downloadCount} />
                   </span>
-                  <span className="text-lg text-foreground">downloads as of now 🔥</span>
+                  <span className="text-lg text-foreground font-bold">downloads as of now 🔥</span>
                 </div>
               </CardContent>
             </Card>
