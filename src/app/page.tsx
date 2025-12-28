@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,6 +11,10 @@ import { Heart, Mail, Phone } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
 import { AnimatedCounter } from "@/components/animated-counter";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+
 
 const steps = [
   {
@@ -73,6 +77,9 @@ const reviews = [
     }
 ]
 
+const carouselImages = PlaceHolderImages.filter(img => ["ebook-cover", "screenshot-1", "screenshot-2", "poster"].includes(img.id));
+
+
 export default function Home() {
   const [offerExpired, setOfferExpired] = useState(false);
   const [downloadCount, setDownloadCount] = useState(9812);
@@ -111,6 +118,10 @@ export default function Home() {
   const handleTimerComplete = () => {
     setOfferExpired(true);
   };
+  
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -167,14 +178,34 @@ export default function Home() {
 
         <section id="cover" className="w-full py-12 md:py-24">
             <div className="container flex justify-center">
-                <Image
-                    src="/images/10 Easy Steps (1).png"
-                    alt="Ebook cover for 10 Easy Steps to Marry the Girl You Love"
-                    width={400}
-                    height={600}
-                    className="rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105"
-                    priority
-                />
+              <Carousel
+                plugins={[plugin.current]}
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
+              >
+                <CarouselContent>
+                  {carouselImages.map((image) => (
+                    <CarouselItem key={image.id}>
+                      <div className="p-1">
+                        <Card>
+                          <CardContent className="flex aspect-[2/3] items-center justify-center p-0">
+                            <Image
+                              src={image.imageUrl}
+                              alt={image.description}
+                              width={400}
+                              height={600}
+                              className="rounded-lg object-cover w-full h-full"
+                              data-ai-hint={image.imageHint}
+                              priority={image.id === 'ebook-cover'}
+                            />
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
         </section>
 
