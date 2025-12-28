@@ -126,7 +126,7 @@ export default function Home() {
                     </div>
                   </>
                 )}
-                <a href="https://rzp.io/rzp/05NiI8Eh" target="_blank" rel="noopener noreferrer">
+                <a href="https://rzp.io/rzp/05NiI8Eh">
                   <Button size="lg" className="w-full text-lg font-bold">
                     Buy Now & Get that Girl❤️
                   </Button>
@@ -302,6 +302,8 @@ export default function Home() {
       </footer>
     </div>
   );
+
+    
 
     
 
