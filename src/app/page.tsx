@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Heart, Mail, Phone } from "lucide-react";
+import { Heart, Mail, Phone, Download } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
@@ -100,11 +100,11 @@ export default function Home() {
                 <Button size="lg" className="w-full text-lg font-bold">
                   Buy Now & Get that Girl❤️
                 </Button>
-                <div className="flex flex-row items-baseline justify-center gap-3 pt-2 text-muted-foreground">
+                <div className="flex flex-row items-baseline justify-center gap-3 pt-2">
                   <span className="font-bold text-foreground text-5xl">
                     <AnimatedCounter from={9700} to={9812} />
                   </span>
-                  <span className="text-lg">downloads as of now</span>
+                  <span className="text-lg text-foreground">downloads as of now 🔥</span>
                 </div>
               </CardContent>
             </Card>
