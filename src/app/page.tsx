@@ -131,13 +131,13 @@ export default function Home() {
               <CardContent className="p-6 space-y-4">
                 {offerExpired ? (
                   <div className="flex items-center justify-center gap-4">
-                    <span className="text-6xl font-bold text-foreground">₹299</span>
+                    <span className="text-6xl font-bold text-foreground font-code">₹299</span>
                   </div>
                 ) : (
                   <>
                     <div className="flex items-center justify-center gap-4 animate-price-drop">
-                      <span className="text-4xl font-bold text-foreground line-through">₹299</span>
-                      <span className="text-6xl font-bold text-destructive">₹59</span>
+                      <span className="text-4xl font-bold text-foreground line-through font-code">₹299</span>
+                      <span className="text-6xl font-bold text-destructive font-code">₹59</span>
                     </div>
                     <div className="text-center">
                       <p className="font-bold text-foreground">Offer ends in:</p>
@@ -155,7 +155,7 @@ export default function Home() {
                   </Button>
                 </a>
                 <div className="flex flex-row items-baseline justify-center gap-3 pt-2">
-                  <span className="font-bold text-foreground text-5xl">
+                  <span className="font-bold text-foreground text-5xl font-code">
                     <AnimatedCounter from={initialDownloadCount} to={downloadCount} />
                   </span>
                   <span className="text-lg text-black font-bold">downloads as of now 🔥</span>
@@ -326,6 +326,8 @@ export default function Home() {
     </div>
   );
 }
+    
+
     
 
     

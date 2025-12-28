@@ -32,9 +32,11 @@ export function CountdownTimer({ initialMinutes = 10, className, onComplete }: C
   const seconds = timeLeft % 60;
 
   return (
-    <div className={cn("text-2xl font-bold font-mono text-accent", className)}>
+    <div className={cn("text-2xl font-bold font-code text-accent", className)}>
       <span>{String(minutes).padStart(2, '0')}</span>:
       <span>{String(seconds).padStart(2, '0')}</span>
     </div>
   );
 }
+
+    
