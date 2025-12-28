@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -74,6 +74,15 @@ const reviews = [
 
 export default function Home() {
   const [offerExpired, setOfferExpired] = useState(false);
+  const [downloadCount, setDownloadCount] = useState(9812);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDownloadCount(prevCount => prevCount + 1);
+    }, 10000); // 10 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleTimerComplete = () => {
     setOfferExpired(true);
@@ -107,7 +116,7 @@ export default function Home() {
                       <span className="text-6xl font-bold text-destructive">₹59</span>
                     </div>
                     <div className="text-center">
-                      <p className="font-bold text-primary">Offer ends in:</p>
+                      <p className="font-bold text-foreground">Offer ends in:</p>
                       <CountdownTimer 
                         initialMinutes={10} 
                         className="text-foreground"
@@ -121,7 +130,7 @@ export default function Home() {
                 </Button>
                 <div className="flex flex-row items-baseline justify-center gap-3 pt-2">
                   <span className="font-bold text-foreground text-5xl">
-                    <AnimatedCounter from={9700} to={9812} />
+                    <AnimatedCounter from={9812} to={downloadCount} />
                   </span>
                   <span className="text-lg text-foreground">downloads as of now 🔥</span>
                 </div>
@@ -216,5 +225,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
