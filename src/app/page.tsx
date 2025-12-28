@@ -100,11 +100,11 @@ export default function Home() {
                 <Button size="lg" className="w-full text-lg font-bold">
                   Buy Now &amp; Get that Girl❤️
                 </Button>
-                <div className="flex flex-col items-center justify-center pt-2 text-sm text-muted-foreground">
-                  <span className="font-bold text-foreground text-4xl">
+                <div className="flex flex-col items-center justify-center pt-2 text-base text-muted-foreground">
+                  <span className="font-bold text-foreground text-5xl">
                     <AnimatedCounter from={9700} to={9812} />
                   </span>
-                  <span>brothers helped!</span>
+                  <span>downloads as of now</span>
                 </div>
               </CardContent>
             </Card>
