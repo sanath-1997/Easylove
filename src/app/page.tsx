@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Download, Heart, Mail, Phone, ShoppingCart } from "lucide-react";
+import { Heart, Mail, Phone } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
+import { AnimatedCounter } from "@/components/animated-counter";
 
 const ebookCover = PlaceHolderImages.find(p => p.id === 'ebook-cover');
 
@@ -89,19 +90,21 @@ export default function Home() {
             <Card className="max-w-md mx-auto !mt-12 shadow-2xl">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center justify-center gap-4 animate-price-drop">
-                  <span className="text-4xl font-bold text-gray-400 line-through">₹299</span>
-                  <span className="text-6xl font-bold text-accent">₹59</span>
+                  <span className="text-4xl font-bold text-foreground line-through">₹299</span>
+                  <span className="text-6xl font-bold text-destructive">₹99</span>
                 </div>
                 <div className="text-center">
                   <p className="font-bold text-primary">Offer ends in:</p>
-                  <CountdownTimer initialMinutes={30} />
+                  <CountdownTimer initialMinutes={30} className="text-foreground" />
                 </div>
                 <Button size="lg" className="w-full text-lg font-bold">
-                  <ShoppingCart className="mr-2 h-6 w-6" /> Buy Now & Get Your Girl
+                  Buy Now &amp; Get that Girl❤️
                 </Button>
-                <div className="flex items-center justify-center pt-2 text-sm text-muted-foreground">
-                  <Download className="mr-2 h-4 w-4"/>
-                  <span>Over <span className="font-bold text-foreground">9,800</span> brothers helped!</span>
+                <div className="flex flex-col items-center justify-center pt-2 text-sm text-muted-foreground">
+                  <span className="font-bold text-foreground text-4xl">
+                    <AnimatedCounter from={9700} to={9812} />
+                  </span>
+                  <span>brothers helped!</span>
                 </div>
               </CardContent>
             </Card>

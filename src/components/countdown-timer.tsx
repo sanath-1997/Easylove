@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 type CountdownTimerProps = {
     initialMinutes: number;
+    className?: string;
 }
 
-export function CountdownTimer({ initialMinutes = 30 }: CountdownTimerProps) {
+export function CountdownTimer({ initialMinutes = 30, className }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
 
   useEffect(() => {
@@ -24,14 +26,14 @@ export function CountdownTimer({ initialMinutes = 30 }: CountdownTimerProps) {
   }, [timeLeft]);
 
   if (timeLeft === null) {
-    return <div className="text-2xl font-bold font-mono text-accent">--:--</div>;
+    return <div className={cn("text-2xl font-bold font-mono text-accent", className)}>--:--</div>;
   }
   
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
 
   return (
-    <div className="text-2xl font-bold font-mono text-accent">
+    <div className={cn("text-2xl font-bold font-mono text-accent", className)}>
       <span>{String(minutes).padStart(2, '0')}</span>:
       <span>{String(seconds).padStart(2, '0')}</span>
     </div>
