@@ -126,9 +126,11 @@ export default function Home() {
                     </div>
                   </>
                 )}
-                <Button size="lg" className="w-full text-lg font-bold">
-                  Buy Now & Get that Girl❤️
-                </Button>
+                <a href="https://rzp.io/rzp/05NiI8Eh" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="w-full text-lg font-bold">
+                    Buy Now & Get that Girl❤️
+                  </Button>
+                </a>
                 <div className="flex flex-row items-baseline justify-center gap-3 pt-2">
                   <span className="font-bold text-foreground text-5xl">
                     <AnimatedCounter from={9812} to={downloadCount} />
@@ -300,5 +302,7 @@ export default function Home() {
       </footer>
     </div>
   );
+
+    
 
     
