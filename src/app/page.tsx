@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Heart, Mail, Phone, Download } from "lucide-react";
+import { Heart, Mail, Phone } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
 import { AnimatedCounter } from "@/components/animated-counter";
@@ -88,7 +88,7 @@ export default function Home() {
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center justify-center gap-4 animate-price-drop">
                   <span className="text-4xl font-bold text-foreground line-through">₹299</span>
-                  <span className="text-6xl font-bold text-destructive">₹99</span>
+                  <span className="text-6xl font-bold text-destructive">₹59</span>
                 </div>
                 <div className="text-center">
                   <p className="font-bold text-primary">Offer ends in:</p>
@@ -145,10 +145,8 @@ export default function Home() {
         <section id="benefits" className="w-full py-12 md:py-24">
           <div className="container px-4 md:px-6">
             <Card className="max-w-3xl mx-auto bg-primary text-primary-foreground shadow-lg">
-                <CardHeader>
-                    <CardTitle className="text-3xl font-headline">The Benefit You Get</CardTitle>
-                </CardHeader>
-                <CardContent>
+                <CardContent className="p-6">
+                    <h3 className="text-3xl font-headline font-bold mb-4">The Benefit You Get</h3>
                     <p className="text-xl">
                     This ebook helps you move from confusion and overthinking to calm confidence — so you act like a man who respects himself, instead of someone chasing approval.
                     </p>
