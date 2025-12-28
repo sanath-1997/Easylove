@@ -92,7 +92,7 @@ export default function Home() {
                 </div>
                 <div className="text-center">
                   <p className="font-bold text-primary">Offer ends in:</p>
-                  <CountdownTimer initialMinutes={30} className="text-foreground" />
+                  <CountdownTimer initialMinutes={10} className="text-foreground" />
                 </div>
                 <Button size="lg" className="w-full text-lg font-bold">
                   Buy Now & Get that Girl❤️
