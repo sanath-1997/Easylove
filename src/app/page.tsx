@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Heart, Mail, Phone } from "lucide-react";
+import { Heart, Mail, Phone, Coffee } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { ReviewCard } from "@/components/review-card";
 import { AnimatedCounter } from "@/components/animated-counter";
@@ -142,14 +142,17 @@ export default function Home() {
               <CardContent className="p-6 space-y-4">
                 {offerExpired ? (
                   <div className="flex items-center justify-center gap-4">
-                    <span className="text-6xl font-bold text-foreground font-code">₹299</span>
+                    <span className="text-6xl font-bold text-foreground font-code">₹199</span>
                   </div>
                 ) : (
                   <>
                     <div className="flex items-center justify-center gap-4 animate-price-drop">
-                      <span className="text-4xl font-bold text-foreground line-through font-code">₹299</span>
-                      <span className="text-6xl font-bold text-destructive font-code">₹59</span>
+                      <span className="text-4xl font-bold text-foreground line-through font-code">₹199</span>
+                      <span className="text-6xl font-bold text-destructive font-code">₹19</span>
                     </div>
+                     <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+                      Get the book at the price of a coffee <Coffee className="w-4 h-4" />
+                    </p>
                     <div className="text-center">
                       <p className="font-bold text-foreground">Offer ends in:</p>
                       <CountdownTimer 
@@ -358,6 +361,8 @@ export default function Home() {
     </div>
   );
 }
+    
+
     
 
     
