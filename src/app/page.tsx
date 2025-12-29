@@ -150,8 +150,8 @@ export default function Home() {
                       <span className="text-4xl font-bold text-foreground line-through font-code">₹199</span>
                       <span className="text-6xl font-bold text-destructive font-code">₹19</span>
                     </div>
-                     <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-                      Get the book at the price of a coffee <Coffee className="w-4 h-4" />
+                     <p className="text-base text-foreground font-bold flex items-center justify-center gap-2">
+                      Get the book at the price of a coffee <Coffee className="w-5 h-5 text-yellow-600" />
                     </p>
                     <div className="text-center">
                       <p className="font-bold text-foreground">Offer ends in:</p>
@@ -361,6 +361,8 @@ export default function Home() {
     </div>
   );
 }
+    
+
     
 
     
