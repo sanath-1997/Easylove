@@ -163,7 +163,7 @@ export default function Home() {
                     </div>
                   </>
                 )}
-                <a href="https://rzp.io/rzp/05NiI8Eh">
+                <a href="https://rzp.io/rzp/05NiI8Eh" className="block mt-4">
                   <Button size="lg" className="w-full text-lg font-bold">
                     Buy Now & Get your love ❤️
                   </Button>
